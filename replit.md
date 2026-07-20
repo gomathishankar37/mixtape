@@ -1,45 +1,57 @@
-# [Project name]
+# 🌻 For the Smile I Like 🌚 — Mixtape
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A personal digital cassette tape — a warm, retro-styled music gift page. One link, seven Tamil film songs, meant to be opened by someone special.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- `pnpm --filter @workspace/mixtape run dev` — run the mixtape site locally
+- `pnpm --filter @workspace/api-server run dev` — run the API server (not used by the mixtape site)
 - `pnpm run typecheck` — full typecheck across all packages
-- `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
 
 ## Stack
 
-- pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- React + Vite (static frontend, no backend)
+- Tailwind CSS + Framer Motion for the retro cassette UI
+- Spotify embed iframes for each track
+- GitHub Actions → GitHub Pages for hosting
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/mixtape/src/App.tsx` — main app, contains the `TRACKS` array at the top (line 3)
+- `artifacts/mixtape/src/index.css` — full CSS with retro/warm palette, grain texture, Google Fonts
+- `.github/workflows/deploy.yml` — GitHub Actions workflow for GH Pages deployment
 
-## Architecture decisions
+## Adding Spotify Track IDs
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+Open `artifacts/mixtape/src/App.tsx`. At the top you'll see:
 
-## Product
+```js
+const TRACKS = [
+  { song: "Roja Kadale", spotifyTrackId: "SPOTIFY_ID_1" },
+  ...
+]
+```
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+To get a real track ID:
+1. Open Spotify → search for the song
+2. Right-click the song → Share → Copy Song Link
+3. The link looks like: `https://open.spotify.com/track/4iV5W9uYEdYUVa79Axb7Rh`
+4. The ID is the part after `/track/` → `4iV5W9uYEdYUVa79Axb7Rh`
+5. Paste that into the matching `spotifyTrackId` field in App.tsx
 
-## User preferences
+## GitHub Pages Deployment
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+The GitHub Actions workflow is at `.github/workflows/deploy.yml`. It deploys automatically on every push to `main`.
 
-## Gotchas
+Setup steps:
+1. Create a GitHub repo named exactly **`mixtape`** (public)
+2. Push this code to it: `git remote add origin https://github.com/gomathishankar37/mixtape.git && git push -u origin main`
+3. In your GitHub repo → Settings → Pages → Source: set to `gh-pages` branch
+4. Your site will be live at: **https://gomathishankar37.github.io/mixtape/**
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+## User Preferences
 
-## Pointers
-
-- See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details
+- Retro lo-fi cassette aesthetic; warm, wholesome, cute, lovely
+- Tamil film songs only
+- Static site; no backend, no login
+- Host on GitHub Pages
