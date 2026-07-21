@@ -378,7 +378,7 @@ function App() {
           transition={{ delay: 1 }}
         >
           <p className="font-mono text-[11px] md:text-xs text-white/40 tracking-widest drop-shadow-md">
-            Made for You! 
+            Made for You! 🌝
           </p>
         </motion.footer>
 
