@@ -8,49 +8,49 @@ const TRACKS = [
     song: "Roja Kadale",
     film: "Anegan",
     director: "Harris Jayaraj",
-    spotifyTrackId: "SPOTIFY_ID_1",
+    spotifyTrackId: "7yOB0xjipPQDlcGj5PWo7I",
   },
   {
     number: "02",
     song: "Oyyale",
     film: "Mann Madhan Ambu",
     director: "Harris Jayaraj",
-    spotifyTrackId: "SPOTIFY_ID_2",
+    spotifyTrackId: "3JKGijiAFAlwORe9nRxXmI",
   },
   {
     number: "03",
     song: "Mei Nigara",
     film: "24",
     director: "A.R. Rahman",
-    spotifyTrackId: "SPOTIFY_ID_3",
+    spotifyTrackId: "2qN6L6hAiJqXGaIOUu4mLf",
   },
   {
     number: "04",
     song: "Kanave Kanave",
     film: "Sketch",
     director: "Vivek-Mervin",
-    spotifyTrackId: "SPOTIFY_ID_4",
+    spotifyTrackId: "1JxMHhgfVrvqTDIjfNp25z",
   },
   {
     number: "05",
     song: "Kadavule",
     film: "Kacheri Arambam",
     director: "G.V. Prakash Kumar",
-    spotifyTrackId: "SPOTIFY_ID_5",
+    spotifyTrackId: "31yL0c9mIzBNH3P6YlfoID",
   },
   {
     number: "06",
-    song: "Mona Lisa",
+    song: "Mona Gasolina",
     film: "Lingaa",
     director: "A.R. Rahman",
-    spotifyTrackId: "SPOTIFY_ID_6",
+    spotifyTrackId: "3VycI030htG0a1yXDDmm3m",
   },
   {
     number: "07",
     song: "Naan Varaindhu Vaitha",
     film: "Jayamkondan",
     director: "Unknown",
-    spotifyTrackId: "SPOTIFY_ID_7",
+    spotifyTrackId: "13TkSmjKZuTTrsqBYqMB2R",
   },
 ];
 
@@ -118,7 +118,7 @@ function CassetteFront() {
         
         {/* Label Header Banner */}
         <div className="bg-gradient-to-r from-[#1e003c] to-[#3a005c] text-[#f0e6d3] py-1.5 text-center border-b-2 border-[#1e003c]">
-          <p className="font-mono text-[10px] tracking-[0.2em] font-bold">SIDE A</p>
+          <p className="font-mono text-[10px] tracking-[0.2em] font-bold">Rave It</p>
         </div>
         
         {/* Main Label Title */}
